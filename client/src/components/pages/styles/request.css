@@ -1,0 +1,117 @@
+.containerRequest{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1em;
+}
+.contentFormRequest{
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.formRequest{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.formRequest input,.formRequest select{
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: .3em;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    margin: .3em;
+} 
+
+.formRequest input::placeholder{
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+}
+.formRequest input:focus{
+    outline: none;
+    border: 2px solid #007BAD;
+    transition: border .2s;
+}
+.error{
+    margin: 0;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    color: #FF0000;
+}
+.buttonRequest{
+    width: 110px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-family: 'Mulish', sans-serif;
+    font-size: 1rem;
+    font-weight: 400 !important;
+    color: #FFFFFF;
+    border: none;
+    align-self: center;
+    outline: none;
+    background-color: #52C0F7;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+.contentOperations{
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.withoutColor, .color, .headersTableRequest{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    padding: 0.5em;
+    margin: 0;
+}
+.headersTableRequest{
+    background-color: #001529;
+}
+.color{
+   background-color: #52C0F7; 
+}
+.withoutColor{
+    background-color: #FFFFFF; 
+}
+.withoutColor li, .color li, .headersTable li{
+    width: 25%;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    align-self: center;
+}
+.color li, .headersTable li{
+    color: #FFFFFF;
+}
+.headersTableRequest li{
+    font-weight: 500 !important;
+    font-weight: 500 !important;
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+.pair, .odd, .headersTableRequest{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 0;
+}
+.pair{
+    background-color: #13a7f1;
+}
+.odd{
+    background-color: #FFFFFF;
+}
+@media screen and (max-width:760px){
+    .contentOperationsRequest{
+        width: 95%;
+    }
+}

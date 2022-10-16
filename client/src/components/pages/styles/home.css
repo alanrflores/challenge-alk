@@ -1,0 +1,150 @@
+
+.container{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background-color: #ffffff;
+    background-image: linear-gradient(180deg, #ffffff 0%, #c8f6ff 100%);
+
+}
+.container h1{
+    margin: 0;
+    margin-bottom: 50px;
+    padding-top: 0.5em;
+    padding-bottom: 0.4em;
+    padding: 10px;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400 !important;
+    color: #404040;
+}
+.contentOperations{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.contentBalance{
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-between;
+
+}
+.headersTable{
+    background-color: #001529;
+    display: flex;
+    flex-direction: row;
+}
+.headersTable li{
+    font-weight: 500 !important;
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+.pair, .odd, .headersTable{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    border-radius: 12px;
+    padding: 4px;
+    margin: 0;
+}
+.pair{
+    background-color: #13a7f1;
+}
+.odd{
+    background-color: #FFFFFF;
+}
+.contentOperations label {
+    font-family: 'Mulish', sans-serif;
+}
+.odd li, .pair li, .headersTable li{
+    width: 20%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    align-self: center;
+    text-align: center;
+}
+.pair li, .headersTable li{
+    color: #FFFFFF;
+}
+.delete{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+}
+.button{
+    width: 90px;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 16px;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 500 !important;
+    color: #FFFFFF;
+    border: none;
+    outline: none;
+    background-color: #0b91d4c0;
+    margin: 0.5em;
+    margin-left: 18px;
+    cursor: pointer;
+}
+.iconDelete, .iconEdit{
+    margin-left: 0.5em;
+    cursor: pointer;
+}
+.iconDelete:hover, .iconEdit:hover{
+    position: relative;
+    bottom: 0.2em;
+}
+.popUpEdit{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.popUpEdit input{
+    width: 100px;
+    font-family:'Mulish', sans-serif;
+    margin: 1em;
+}
+.contentBalance p{
+    margin: 0;
+    font-weight: 600;
+    font-size: large;
+}
+.filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+.active{
+    display: flex;
+}
+.active{
+    display: none;
+}
+
+.btn{
+    border-radius: 10px;
+    color: #100000;
+    background-color: rgba(222, 184, 135, 0.628);
+    padding: 12px;
+    border: none;
+}
+
+.btn:hover{
+    background-color: antiquewhite;
+}
+@media screen and (max-width:600px){
+    .contentOperations{
+        width: 95%;
+    }
+    .button{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contentBalance{
+        margin-bottom: 1em;
+        font-family:'Mulish', sans-serif;
+    }
+}
