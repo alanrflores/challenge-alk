@@ -44,5 +44,8 @@ Desde la consola, solo nos ubicamos en la carpeta client del proyecto hacemos un
 Teniendo tanto servidor como el cliente corriendo en las consolas nos vamos al navegador a la pagina [http://localhost:3000] que es por defecto la que esta puesta para que corra el front, y vamos a poder ver la pagina
 
 `Para utilizarla` primero deberiamos registrarnos en la seccion de register, y luego iniciar sesion con la cuenta creada anteriormente, recien ahi vamos a poder realizar operaciones y ver nuestro balance, cuando hagamos nuevas operaciones estas quedaran registradas ya que cuenta con la base de datos creada en el backend y cada usuario va a tener sus operaciones guardadas 
+EMAIL DE PRUEBA QUE TENGO CREADO : alan.flores22@gmail.com
+contraseña: Simon1234
+Puede probar y cuando entra estan las operaciones tanto de ingreso como egreso, puede filtrar, puede crear una operacion o modificarla
 
 #GRACIAS
