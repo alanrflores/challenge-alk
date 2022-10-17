@@ -6,10 +6,12 @@ import { useEffect } from "react";
 import {  getUserId } from "../../store/user/actions";
 import {
   deleteOperation,
-  updateOperation,
+  filterOperation,
+  getOperation,
 } from "../../store/operation/actions";
 import Request from '../Request';
 import './styles/home.css';
+import Modal from "../modal/Modal";
 
 
 const Home = () => {
@@ -19,6 +21,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const [balance, setBalance] = useState();
   const [hidden, setHidden] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const logged = JSON.parse(localStorage.getItem("user"));
 
@@ -58,12 +61,11 @@ const Home = () => {
     await dispatch(deleteOperation(id));
   };
 
-  const updateInfo = async (id) => {
-    await dispatch(updateOperation(id));
-  };
+
 
 
   return (
+   
     <div className='container'>
       <h1>ABM of operations (income and expenses)</h1>
       <div>
@@ -77,9 +79,27 @@ const Home = () => {
       {balance ? <p className={hidden ? 'active' : 'hidden'}>{balance}</p>
        : <p className={hidden ? 'active' : 'hidden'}>0</p>}
        </div>
-    
-      
-           
+       
+       
+                <div className='filter'>
+                    <button 
+                        className='button' 
+                        onClick={() => dispatch(filterOperation("entry", logged.id))}> 
+                            Entry 
+                    </button>
+                    <button 
+                        className='button'  
+                        onClick={() => dispatch(filterOperation("egress", logged.id))}> 
+                            Egress 
+                    </button>
+                    <button 
+                        className='button' 
+                         onClick={() => dispatch(getUserId(logged.id))}
+                        > 
+                            All
+                    </button>
+                </div>
+       
       {operation && operation.length > 0 ? (
         operation.map((element, i) => (
           <div key={element.id}>
@@ -88,11 +108,12 @@ const Home = () => {
               <li>{element.amount}</li>
               <li>{element.type}</li>
               <li>{getDate(element.createdAt)}</li>
-              <li className='delete'> 
+              <li> 
                 <button className='button' onClick={() => deleteInfo(element.id)}>delete</button>
               </li>
-              <li className='iconEdit'>
-              <button className='button' onClick={() =>updateInfo(element.id)}>update</button>
+              <li>
+               <button className='button' onClick={() => setOpen(true)}>update</button>
+              {open && <Modal setOpen= {setOpen} id={element.id} logged={logged}/>}
               </li>
             </ul>
           </div>
@@ -103,6 +124,7 @@ const Home = () => {
       )}
     </div>
     </div>
+   
   );
 };
 

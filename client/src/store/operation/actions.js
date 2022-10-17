@@ -58,13 +58,15 @@ export const deleteOperation = (id) => {
     }
 };
 
-export const updateOperation = (id, value) => {
-    return async(dispatch) => {
+export const updateOperation = (id, body) => {
+    return async(dispatch, getState) => {
+        console.log(getState())
         dispatch(getOperationRequest());
         try {
-            const res = await axios.put(`http://localhost:3001/operation/${id}`, value);
-            dispatch(getOperationSuccess(res.data));
-            await dispatch(getOperation());
+            await axios.put(`http://localhost:3001/operation/${id}`, body);
+            const userId = getState().userReducer.user.id
+            const getOperation = await axios.get(`http://localhost:3001/users/${userId}`)
+             dispatch(getOperationSuccess(getOperation.data.operations));
         } catch (error) {
             dispatch(getOperationFailure(error));
         }
@@ -76,11 +78,11 @@ export const filterOperation = (type, id) => {
        dispatch(getOperationRequest());
        try {
           const res = await axios.get(`http://localhost:3001/users/${id}`)
-          const result = res.data.operations
+        //   const result = res.data.operations
           if(type){
-            dispatch(getOperationSuccess(result.filter((element)=> element.type === type)))
+            dispatch(getOperationSuccess(res.data.operations.filter((element)=> element.type === type)))
           }else{
-            getOperationSuccess(result);
+            getOperationSuccess(res.data.operations);
           } 
        } catch (error) {
         dispatch(getOperationFailure(error));

@@ -2,18 +2,23 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import { Formik, Form, Field } from "formik";
 import axios from "axios";
-import {useDispatch} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import './pages/styles/request.css'
+import { getOperationSuccess } from "../store/operation/actions";
+
+
 const Request = () => {
-  const dispatch = useDispatch();
   let logged = JSON.parse(localStorage.getItem("user"));
-
   const [result, setResult] = useState([]);
-
+  const dispatch = useDispatch();
+  const userId = useSelector((state) => state.userReducer.user.id);
+  
+  
   const getDate = (time) => {
     let date = new Date(time).toDateString();
     return date;
   };
+ 
 
   return (
     <div className='containerRequest'>
@@ -41,7 +46,7 @@ const Request = () => {
 
           return errors;
         }}
-        onSubmit={(fields) => {
+        onSubmit={async(fields) => {
           if (logged) {
             let options = {
               method: "POST",
@@ -63,6 +68,10 @@ const Request = () => {
                 title: "new operation create successfully",
               });
             });
+            const getOperation =await axios.get(`http://localhost:3001/users/${userId}`)
+            dispatch(getOperationSuccess(getOperation.data.operations))
+            setResult("")
+            
           } else {
             Swal.fire({
               icon: "error",
@@ -93,15 +102,15 @@ const Request = () => {
         )}
       </Formik>
       {result && result.length > 0 ? (
-        <div className='contentOperations'>
+        <div className='contentOperationsRequest'>
         <div className="headersTableRequest">
           {result.map((elem, i) => {
             return (
               <ul key={i}className={elem.type === 'ingress' ? 'color' : 'withoutColor'}>
-                <li>{elem.concept}</li>
+                 <li>{elem.concept}</li>
                 <li>{elem.amount}</li>
                 <li>{elem.type}</li>
-                <li>{getDate(elem.createdAt)}</li>
+                <li>{getDate(elem.createdAt)}</li> 
               </ul>
             );
           })}

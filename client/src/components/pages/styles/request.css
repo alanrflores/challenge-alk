@@ -1,15 +1,16 @@
 .containerRequest{
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     text-align: center;
     margin-top: 1em;
 }
 .contentFormRequest{
-    width: 350px;
+    width: 650px;
     margin-left: auto;
     margin-right: auto;
+    
 }
 .formRequest{
     width: 100%;
@@ -58,8 +59,10 @@
     margin-right: auto;
     cursor: pointer;
 }
-.contentOperations{
-    width: 600px;
+.contentOperationsRequest{
+   
+    width: 400px;
+    padding: 10px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -72,7 +75,9 @@
     margin: 0;
 }
 .headersTableRequest{
-    background-color: #001529;
+    background-color: #ffffff00;
+    background-image: linear-gradient(180deg, #ffffff 0%, #c8f6ff 100%);
+    
 }
 .color{
    background-color: #52C0F7; 
@@ -80,36 +85,24 @@
 .withoutColor{
     background-color: #FFFFFF; 
 }
-.withoutColor li, .color li, .headersTable li{
+.withoutColor li, .color li, .headersTableRequest li{
     width: 25%;
     font-family: 'Mulish', sans-serif;
     font-size: 16px;
     align-self: center;
 }
-.color li, .headersTable li{
-    color: #FFFFFF;
+.color li, .headersTableRequest li{
+    color: #ffffff;
 }
 .headersTableRequest li{
     font-weight: 500 !important;
     font-weight: 500 !important;
     padding-top: 2em !important;
     padding-bottom: 2em !important;
+    display: none;
 }
-.pair, .odd, .headersTableRequest{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    list-style: none;
-    border-radius: 12px;
-    padding: 16px;
-    margin: 0;
-}
-.pair{
-    background-color: #13a7f1;
-}
-.odd{
-    background-color: #FFFFFF;
-}
+ 
+
 @media screen and (max-width:760px){
     .contentOperationsRequest{
         width: 95%;
