@@ -75,7 +75,7 @@ const Login = () => {
                   confirmButtonText: "Cool",
                 }).then((result) => {
                   if (result.isConfirmed || result.isDismissed) {
-                    navigate("/home");
+                    navigate("/");
                   }
                 });
               })

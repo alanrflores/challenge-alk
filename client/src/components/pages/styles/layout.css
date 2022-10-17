@@ -1,0 +1,22 @@
+.containerLayout{
+    background-image: url('https://innpulsacolombia.com/cemprende/sites/default/files/styles/950x/public/2022-04/ALKEMY%20BANNER.png?itok=W6IDAwai');
+    background-attachment: fixed;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+};
+.divLink{
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ padding: 20px;
+}
+.divLink a{
+ color: aliceblue;
+ font-size: x-large;
+ font-weight: bold;
+ list-style: none;
+ padding: 10px;
+ margin-top: 50px;
+}

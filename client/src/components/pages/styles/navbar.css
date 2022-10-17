@@ -1,4 +1,8 @@
+.containerNavbar{
+    border-radius: 10px;
+}
 .containerNavbar img{
     width: 120px;
     padding: 20px;
+    
 }
